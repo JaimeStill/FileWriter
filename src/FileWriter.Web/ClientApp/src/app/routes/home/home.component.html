@@ -1,0 +1,44 @@
+<mat-toolbar>Create New File</mat-toolbar>
+<section fxLayout="column"
+         fxLayoutAlign="start stretch"
+         class="container">
+  <mat-form-field>
+    <mat-label>Filename</mat-label>
+    <input matInput
+           [(ngModel)]="file.path" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Value</mat-label>
+    <textarea matInput
+              mat-autosize
+              [(ngModel)]="file.value"
+              [matAutosizeMinRows]="6"
+              [matAutosizeMaxRows]="8"></textarea>
+  </mat-form-field>
+  <button mat-stroked-button
+          color="primary"
+          fxFlexAlign="start"
+          (click)="writeText()">Create File</button>
+</section>
+<mat-toolbar>Output Files</mat-toolbar>
+<ng-container *ngIf="app.files$ | async as files else loading">
+  <section *ngIf="files.length > 0"
+           fxLayout="row"
+           fxLayoutAlign="start stretch"
+           class="container">
+    <section *ngFor="let f of files"
+             fxLayout="row"
+             fxLayoutAlign="start center"
+             class="background card elevated"
+             [style.width.px]="320">
+      <p fxFlex>{{f}}</p>
+      <button mat-icon-button
+              color="warn"
+              (click)="removeOutputFile(f)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </section>
+  </section>
+  <p class="mat-subheading-2"
+     *ngIf="!(files.length > 0)">No Output Files Available</p>
+</ng-container>

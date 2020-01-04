@@ -1,0 +1,23 @@
+<div class="mat-typography mat-app-background app-panel"
+     fxLayout="column"
+     [ngClass]="themeClass">
+  <mat-toolbar color="primary">
+    <span fxFlex>File Writer - PowerShell</span>
+    <button mat-icon-button
+            [matMenuTriggerFor]="menu">
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              *ngFor="let t of theme.themes$ | async"
+              (click)="theme.setTheme(t)">{{t.display}}</button>
+    </mat-menu>
+  </mat-toolbar>
+  <section class="app-body">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>

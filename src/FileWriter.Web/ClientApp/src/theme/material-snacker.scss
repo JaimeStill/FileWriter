@@ -1,0 +1,171 @@
+@import './material-styles.scss';
+
+div[class*="dark-"] snack-bar-container.mat-snack-bar-container.snacker {
+  background-color: #3e3e3e!important;
+}
+
+div[class*="dark-"] simple-snack-bar.mat-simple-snackbar,
+div[class*="dark-"] .snacker div.mat-simple-snackbar-action {
+    color: #e1e1e1;
+}
+
+div[class*="dark-"] .snacker-red simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-red, 500);
+}
+
+div[class*="dark-"] .snacker-pink simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-pink, 200);
+}
+
+div[class*="dark-"] .snacker-purple simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-purple, A100);
+}
+
+div[class*="dark-"] .snacker-deep-purple simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-deep-purple, A100);
+}
+
+div[class*="dark-"] .snacker-indigo simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-indigo, A100);
+}
+
+div[class*="dark-"] .snacker-blue simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-blue, 500);
+}
+
+div[class*="dark-"] .snacker-light-blue simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-light-blue, A100);
+}
+
+div[class*="dark-"] .snacker-cyan simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-cyan, A200);
+}
+
+div[class*="dark-"] .snacker-teal simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-teal, A200);
+}
+
+div[class*="dark-"] .snacker-green simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-green, A400);
+}
+
+div[class*="dark-"] .snacker-light-green simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-light-green, A400);
+}
+
+div[class*="dark-"] .snacker-lime simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-lime, A400);
+}
+
+div[class*="dark-"] .snacker-yellow simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-yellow, A200);
+}
+
+div[class*="dark-"] .snacker-amber simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-amber, A200);
+}
+
+div[class*="dark-"] .snacker-orange simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-orange, A200);
+}
+
+div[class*="dark-"] .snacker-deep-orange simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-deep-orange, A200);
+}
+
+div[class*="dark-"] .snacker-brown simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-brown, 300);
+}
+
+div[class*="dark-"] .snacker-grey simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-grey, 300);
+}
+
+div[class*="dark-"] .snacker-blue-grey simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-blue-grey, 200);
+}
+
+div[class*="light-"] snack-bar-container.mat-snack-bar-container.snacker {
+  background-color: #ffffff!important;
+}
+
+div[class*="light-"] simple-snack-bar.mat-simple-snackbar,
+div[class*="light-"] .snacker div.mat-simple-snackbar-action {
+    color: #3e3e3e;
+}
+
+div[class*="light-"] .snacker-red simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-red, 500);
+}
+
+div[class*="light-"] .snacker-pink simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-pink, A200);
+}
+
+div[class*="light-"] .snacker-purple simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-purple, A400);
+}
+
+div[class*="light-"] .snacker-deep-purple simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-deep-purple, A200);
+}
+
+div[class*="light-"] .snacker-indigo simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-indigo, A200);
+}
+
+div[class*="light-"] .snacker-blue simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-blue, 500);
+}
+
+div[class*="light-"] .snacker-light-blue simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-light-blue, A400);
+}
+
+div[class*="light-"] .snacker-cyan simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-cyan, A700);
+}
+
+div[class*="light-"] .snacker-teal simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-teal, A700);
+}
+
+div[class*="light-"] .snacker-green simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-green, A700);
+}
+
+div[class*="light-"] .snacker-light-green simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-light-green, A700);
+}
+
+div[class*="light-"] .snacker-lime simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-lime, A700);
+}
+
+div[class*="light-"] .snacker-yellow simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-yellow, A700);
+}
+
+div[class*="light-"] .snacker-amber simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-amber, A700);
+}
+
+div[class*="light-"] .snacker-orange simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-orange, A400);
+}
+
+div[class*="light-"] .snacker-deep-orange simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-deep-orange, A400);
+}
+
+div[class*="light-"] .snacker-brown simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-brown, 400);
+}
+
+div[class*="light-"] .snacker-grey simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-grey, 500);
+}
+
+div[class*="light-"] .snacker-blue-grey simple-snack-bar.mat-simple-snackbar {
+  color: map-get($mat-blue-grey, 500);
+}

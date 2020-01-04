@@ -1,0 +1,156 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+@mixin style-theme($theme) {
+  $p: map-get($theme, primary);
+  $a: map-get($theme, accent);
+  $w: map-get($theme, warn);
+  $b: map-get($theme, background);
+  $f: map-get($theme, foreground);
+  $primary: mat-color($p);
+  $accent: mat-color($a);
+  $warn: mat-color($w);
+  $background: mat-color($b, background);
+  $background-card: mat-color($b, card);
+  $foreground: mat-color($f, text);
+  $app-bar: mat-color($b, app-bar);
+  $primary-contrast: mat-color($p, default-contrast);
+  $accent-contrast: mat-color($a, default-contrast);
+  $warn-contrast: mat-color($w, default-contrast);
+
+  .color.primary {
+    color: $primary;
+  }
+
+  .color.accent {
+    color: $accent;
+  }
+
+  .color.warn {
+    color: $warn;
+  }
+
+  .background.primary {
+    background-color: $primary;
+    color: $primary-contrast;
+  }
+
+  .background.accent {
+    background-color: $accent;
+    color: $accent-contrast;
+  }
+
+  .background.warn {
+    background-color: $warn;
+    color: $warn-contrast;
+  }
+
+  .background.card {
+    background-color: $background-card;
+  }
+
+  .background.stacked {
+    background-color: $background;
+  }
+
+  code.snippet,
+  a.link {
+    color: $primary;
+  }
+
+  code.snippet.alt,
+  a.link:visited {
+    color: $accent;
+  }
+
+  mat-paginator.mat-paginator {
+    background-color: $background;
+  }
+
+  a.mat-list-item.active,
+  a.mat-tab-link.active {
+    color: $primary;
+  }
+
+  text {
+    fill: $foreground;
+  }
+}
+
+html, body, app, .app-panel {
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+}
+
+.app-body {
+    height: 100%;
+    overflow: auto;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5,
+.mat-typography h6,
+.mat-typography p,
+mat-form-field.mat-form-field {
+  margin: 8px;
+}
+
+mat-toolbar.mat-toolbar.app-toolbar {
+  padding: 0 8px;
+
+  button.mat-icon-button {
+    margin-right: 8px;
+  }
+}
+
+mat-toolbar.mat-toolbar {
+  span {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  button.mat-button {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+a.mat-tab-link {
+  min-width: 80px;
+}
+
+.container {
+  padding: 4px;
+}
+
+.card {
+  margin: 4px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+img.thumbnail {
+  height: 80px;
+}
+
+img.profile-image {
+  height: 200px;
+}
+
+.static-elevation {
+  @include mat-elevation(2);
+}
+
+.elevated {
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(6);
+  }
+}

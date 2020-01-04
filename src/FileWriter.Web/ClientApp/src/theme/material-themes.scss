@@ -1,0 +1,137 @@
+@import "./material-styles.scss";
+@import "./material-snacker.scss";
+
+$light-blue: mat-palette($mat-light-blue, A400);
+$red: mat-palette($mat-red);
+$deep-orange: mat-palette($mat-deep-orange, A200);
+$pink: mat-palette($mat-red, A100);
+$crimson: mat-palette($mat-red, A400);
+
+/*-- Dark Theme Colors --*/
+$green-dark: mat-palette($mat-green, A400);
+$indigo-dark: mat-palette($mat-indigo, A200);
+$purple-dark: mat-palette($mat-purple, A700);
+$amber-dark: mat-palette($mat-amber, A400);
+$teal-dark: mat-palette($mat-teal, A400);
+
+/*-- Light Theme Colors --*/
+$green-light: mat-palette($mat-green, A700);
+$indigo-light: mat-palette($mat-indigo, A400);
+$purple-light: mat-palette($mat-purple, 700);
+$amber-light: mat-palette($mat-amber, A700);
+$teal-light: mat-palette($mat-teal, A700);
+
+/*-- Default Theme --*/
+$default-theme: mat-dark-theme($green-dark, $light-blue);
+@include style-theme($default-theme);
+@include angular-material-theme($default-theme);
+
+/*-- Dark Themes --*/
+.dark-green {
+  $default-theme: mat-dark-theme($green-dark, $light-blue);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-blue {
+  $default-theme: mat-dark-theme($light-blue, $green-dark);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-red {
+  $default-theme: mat-dark-theme($red, $light-blue, $pink);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-indigo {
+  $default-theme: mat-dark-theme($indigo-dark, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-orange {
+  $default-theme: mat-dark-theme($deep-orange, $indigo-dark);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-purple {
+  $default-theme: mat-dark-theme($purple-dark, $amber-dark);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-amber {
+  $default-theme: mat-dark-theme($amber-dark, $purple-dark);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-crimson {
+  $default-theme: mat-dark-theme($crimson, $teal-dark, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.dark-teal {
+  $default-theme: mat-dark-theme($teal-dark, $crimson, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+/*-- Light Themes --*/
+.light-green {
+  $default-theme: mat-light-theme($green-light, $light-blue);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-blue {
+  $default-theme: mat-light-theme($light-blue, $green-light);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-red {
+  $default-theme: mat-light-theme($red, $light-blue, $pink);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-indigo {
+  $default-theme: mat-light-theme($indigo-light, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-orange {
+  $default-theme: mat-light-theme($deep-orange, $indigo-light);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-purple {
+  $default-theme: mat-light-theme($purple-light, $amber-light);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-amber {
+  $default-theme: mat-light-theme($amber-light, $purple-light);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-crimson {
+  $default-theme: mat-light-theme($crimson, $teal-light, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
+
+.light-teal {
+  $default-theme: mat-light-theme($teal-light, $crimson, $deep-orange);
+  @include style-theme($default-theme);
+  @include angular-material-theme($default-theme);
+}
