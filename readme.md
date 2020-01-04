@@ -9,6 +9,12 @@ This repository is a simple demonstration of how to use a PowerShell script embe
 [![write-file](images/01-write-file.gif)](images/01-write-file.gif)  
 *click to open*  
 
+> For much more advanced implementations of this features, see my [Portfolio](https://github.com/JaimeStill/Portfolio) and [Mapper](https://github.com/JaimeStill/Mapper) repositories.
+>
+> The portion of my **Portfolio** repository that uses this feature makes use of an embedded [ffmpeg](https://www.ffmpeg.org/) executable to convert `.mp4` files to `.gif`.
+>
+> The **Mapper** repository uses PowerShell to automate the generation of `GeoJSON` (as demonstrated by Mike Bostock in his [Command-Line Cartography](https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c) article series) so that maps can be rendered using [D3](https://d3js.org/).
+
 ## Scripting  
 [Back to Top](#file-writer---powershell-sdk-with-web-api-and-angular)
 
@@ -73,6 +79,59 @@ The final extension method, `WriteText(this WriterInput input)` pulls everything
 ## API
 [Back to Top](#file-writer---powershell-sdk-with-web-api-and-angular)  
 
+In the previous section, I mentioned that the base path that files are written to should be configurable, and showed an `OutputPath` class defined. Using the dependency injection mechanism in .NET Core, this can be achieved.
+
+An `AppDirectory` variable is defined in [FileWriter.Web/appsettings.json](src/FileWriter.Web/appsettings.json):
+
+![appsettings](images/13-appsettings.png)  
+
+An instance of `OutputPath` is then registered as a Singleton in the `ConfigureServices(IServiceCollection services)` method of [FileWriter.Web/Startup.cs](src/FileWriter.Web/Startup.cs):
+
+![ConfigureServices](images/14-configure-services.png)  
+
+Now, an API can be written that allows for the following features:
+
+* `GetOutputFiles()` - Enumerates all of the files at the output path
+* `WriteText([FromBody]WriterInput input)` - Executes the `WriteText()` extension method from the `FileWriter.Scripting` library, and returns the output
+* `RemoveOutputFile([FromBody]KeyValuePair<string, string> path)` - Deletes the specified file from the output path
+
+[**FileWriter.Web/Controllers/AppController.cs**](src/FileWriter.Web/Controllers/AppController.cs)  
+
+![AppController.cs](images/15-app-controller.cs.png)  
+
 ## Client
 [Back to Top](#file-writer---powershell-sdk-with-web-api-and-angular)  
 
+All that's left now is to create a simple Angular interface. There are 3 pieces to this:
+
+* Models - provide interfaces for mapping the shape of the data that will interact with the API
+* Service - provides state management and functions for interacting with the API
+* Route - the UI that will allow for this interaction
+
+> In a production application, this would all be a lot more complicated, but I've kept it simple for the purposes of this demonstration.
+>
+> The remainder of the application is pretty self-explanatory. For the most part, I'll allow the remaining code to speak for itself.
+
+[**FileWriter.Web/ClientApp/src/app/models/console-output.ts**](src/FileWriter.Web/ClientApp/src/app/models/console-output.ts)  
+
+![console-output.ts](images/16-console-output.ts.png)  
+
+[**FileWriter.Web/ClientApp/src/app/models/writer-input.ts**](src/FileWriter.Web/ClientApp/src/app/models/writer-input.ts)  
+
+![writer-input.ts](images/17-writer-input.ts.png)  
+
+The `AppService` primarily consists of two parts:
+* A private `files: BehaviorSubject<string[]>` exposed as a read-only `Observable` for state management
+* Functions that connect the Client to the API
+
+[**FileWriter.Web/ClientApp/src/app/services/app.service.ts**](src/FileWriter.Web/ClientApp/src/app/services/app.service.ts)  
+
+![app.service.ts](images/18-app.service.ts.png)  
+
+[**FileWriter.Web/ClientApp/src/app/routes/home/home.component.ts**](src/FileWriter.Web/ClientApp/src/app/routes/home/home.component.ts)  
+
+![home.component.ts](images/19-home.component.ts.png)  
+
+[**FileWriter.Web/ClientApp/src/app/routes/home/home.component.html**](src/FileWriter.Web/ClientApp/src/app/routes/home/home.component.html)  
+
+![home.component.html](images/20-home.component.html.png)  
